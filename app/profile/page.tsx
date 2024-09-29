@@ -17,7 +17,10 @@ export default function ProfilePage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-6">个人主页</h1>
-      <Tabs selectedKey={selectedTab} onSelectionChange={handleTabChange}>
+      <Tabs
+        selectedKey={selectedTab}
+        onSelectionChange={(key) => handleTabChange(key as string)}
+      >
         <Tab key="profile" title="个人资料">
           <UserProfile routing="hash" />
         </Tab>
