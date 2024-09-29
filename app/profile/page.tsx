@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Tabs, Tab } from "@nextui-org/react";
+import { UserProfile } from "@clerk/nextjs";
 
-import { ProfileContent } from "@/components/profile-content";
 import { BlogListTab } from "@/components/blog-list-tab";
 import { BlogEditor } from "@/components/blog-editor";
 
@@ -19,7 +19,7 @@ export default function ProfilePage() {
       <h1 className="text-2xl font-bold mb-6">个人主页</h1>
       <Tabs selectedKey={selectedTab} onSelectionChange={handleTabChange}>
         <Tab key="profile" title="个人资料">
-          <ProfileContent />
+          <UserProfile routing="hash" />
         </Tab>
         <Tab key="blogs" title="我的博客">
           <BlogListTab />
