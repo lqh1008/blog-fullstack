@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+
 import { BlogList } from "@/components/blog-list";
 import { BlogPost } from "@/types/blog";
 
@@ -25,6 +27,8 @@ const fetchBlogPosts = async (): Promise<BlogPost[]> => {
   ];
 };
 
+const AboutPage = dynamic(() => import("./about/page"), { ssr: false });
+
 export default async function Home() {
   const posts = await fetchBlogPosts();
 
@@ -35,6 +39,7 @@ export default async function Home() {
         <h2 className="text-lg">最新文章</h2>
       </div>
       <BlogList posts={posts} />
+      <AboutPage />
     </section>
   );
 }

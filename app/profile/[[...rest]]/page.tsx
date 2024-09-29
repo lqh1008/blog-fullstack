@@ -24,7 +24,7 @@ export default function ProfilePage() {
         </Tab>
         <Tab key="blogList" title="博客列表">
           <div className="mt-4">
-            <BlogList />
+            <BlogList posts={[]} />
           </div>
         </Tab>
         <Tab key="blogEditor" title="写博客">
