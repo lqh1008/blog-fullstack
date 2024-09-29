@@ -32,7 +32,15 @@
 		"next": "14.2.4",
 		"next-themes": "^0.2.1",
 		"react": "18.3.1",
-		"react-dom": "18.3.1"
+		"react-dom": "18.3.1",
+		"@lexical/react": "^0.12.2",
+		"@lexical/rich-text": "^0.12.2",
+		"@lexical/list": "^0.12.2",
+		"@lexical/link": "^0.12.2",
+		"@lexical/code": "^0.12.2",
+		"@lexical/table": "^0.12.2",
+		"@lexical/markdown": "^0.12.2",
+		"lexical": "^0.12.2"
 	},
 	"devDependencies": {
 		"@types/node": "20.5.7",
