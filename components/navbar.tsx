@@ -22,7 +22,7 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import { SearchIcon, Logo } from "@/components/icons";
 
 export const Navbar = () => {
-  const { isSignedIn, user } = useUser();
+  const { isSignedIn } = useUser();
 
   const searchInput = (
     <Input
