@@ -1,36 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { UserProfile } from "@clerk/nextjs";
 import { Tabs, Tab } from "@nextui-org/react";
 
-import { BlogList } from "@/components/blog-list";
+import { ProfileContent } from "@/components/profile-content";
+import { BlogListTab } from "@/components/blog-list-tab";
 import { BlogEditor } from "@/components/blog-editor";
 
 export default function ProfilePage() {
   const [selectedTab, setSelectedTab] = useState("profile");
 
+  const handleTabChange = (key: string) => {
+    setSelectedTab(key);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6">个人中心</h1>
-      <Tabs
-        selectedKey={selectedTab}
-        onSelectionChange={(key) => setSelectedTab(key.toString())}
-      >
-        <Tab key="profile" title="个人信息">
-          <div className="mt-4">
-            <UserProfile path="/profile" routing="path" />
-          </div>
+      <h1 className="text-2xl font-bold mb-6">个人主页</h1>
+      <Tabs selectedKey={selectedTab} onSelectionChange={handleTabChange}>
+        <Tab key="profile" title="个人资料">
+          <ProfileContent />
         </Tab>
-        <Tab key="blogList" title="博客列表">
-          <div className="mt-4">
-            <BlogList />
-          </div>
+        <Tab key="blogs" title="我的博客">
+          <BlogListTab />
         </Tab>
-        <Tab key="blogEditor" title="写博客">
-          <div className="mt-4">
-            <BlogEditor />
-          </div>
+        <Tab key="editor" title="写博客">
+          <BlogEditor />
         </Tab>
       </Tabs>
     </div>
